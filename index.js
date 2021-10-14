@@ -66,17 +66,17 @@ data.appendToArray('shop', 'kioskas', pirmasKioskas, (err, content) => {
     // turesim matyti:
     // [{"name":"Pirmas kioskas","size":20,"price":5000}]
     console.log(err, content);
-})
 
-const antrasKioskas = {
-    name: 'Antras kioskas',
-    size: 15,
-    price: 4000
-}
-data.appendToArray('shop', 'kioskas', antrasKioskas, (err, content) => {
-    // tikimasi, jog sekmes atveju, grazinamas turinys
-    // bus atnaujinta failo turinio versija
-    // turesim matyti:
-    // [{"name":"Pirmas kioskas","size":20,"price":5000},{"name":"Antras kioskas","size":15,"price":4000}]
-    console.log(err, content);
+    const antrasKioskas = {
+        name: 'Antras kioskas',
+        size: 15,
+        price: 4000
+    }
+    data.appendToArray('shop', 'kioskas', antrasKioskas, (err, content) => {
+        // tikimasi, jog sekmes atveju, grazinamas turinys
+        // bus atnaujinta failo turinio versija
+        // turesim matyti:
+        // [{"name":"Pirmas kioskas","size":20,"price":5000},{"name":"Antras kioskas","size":15,"price":4000}]
+        console.log(err, content);
+    })
 })
