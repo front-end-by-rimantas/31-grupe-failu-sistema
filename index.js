@@ -42,15 +42,41 @@ const data = require('./lib/data.js');
 //     })
 // });
 
-data.folderContent('books', (err, content) => {
-    console.log(err);
-    console.log(content);
-    if (!err) {
-        // eiti per failu sarasa ir kiekviena ju perskaityti
-        for (const book of content) {
-            data.read('books', book, (err, bookContent) => {
-                console.log(err, bookContent);
-            })
-        }
-    }
-});
+// data.folderContent('books', (err, content) => {
+//     console.log(err);
+//     console.log(content);
+//     if (!err) {
+//         // eiti per failu sarasa ir kiekviena ju perskaityti
+//         for (const book of content) {
+//             data.read('books', book, (err, bookContent) => {
+//                 console.log(err, bookContent);
+//             })
+//         }
+//     }
+// });
+
+const pirmasKioskas = {
+    name: 'Pirmas kioskas',
+    size: 20,
+    price: 5000
+}
+data.appendToArray('shop', 'kioskas', pirmasKioskas, (err, content) => {
+    // tikimasi, jog sekmes atveju, grazinamas turinys
+    // bus atnaujinta failo turinio versija
+    // turesim matyti:
+    // [{"name":"Pirmas kioskas","size":20,"price":5000}]
+    console.log(err, content);
+})
+
+const antrasKioskas = {
+    name: 'Antras kioskas',
+    size: 15,
+    price: 4000
+}
+data.appendToArray('shop', 'kioskas', antrasKioskas, (err, content) => {
+    // tikimasi, jog sekmes atveju, grazinamas turinys
+    // bus atnaujinta failo turinio versija
+    // turesim matyti:
+    // [{"name":"Pirmas kioskas","size":20,"price":5000},{"name":"Antras kioskas","size":15,"price":4000}]
+    console.log(err, content);
+})
